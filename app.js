@@ -6,17 +6,20 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var session = require('express-session');
 var multer = require('multer');
-var upload = multer({ dest: 'uploads/' })
-var moment = require('moment');
+var upload = multer({ dest: 'uploads/' });
 var expressValidator = require('express-validator');
 
 var mongo = require('mongodb')
 var db = require('monk')('localhost/nodeblog');
 
 var index = require('./routes/index');
-var users = require('./routes/users');
+var posts = require('./routes/posts');
+var categories = require('./routes/categories');
 
 var app = express();
+
+// Set Moment Globally
+app.locals.moment = require('moment');
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -70,7 +73,8 @@ app.use(function(req, res, next){
 });
 
 app.use('/', index);
-app.use('/users', users);
+app.use('/posts', posts);
+app.use('/categories', categories);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
