@@ -131,3 +131,23 @@ ul.success li{
 	display: block;
 	margin: auto;
 }
+
+.comments{
+	padding: 5px 5px;
+	background: #ccc;
+	border-radius: 3px;
+}
+
+.comment{
+	border-top: 1px solid #f4f4f4;
+	padding: 3px 3px 0 10px;
+	margin-bottom: 5px;
+}
+
+.comment-name{
+	font-weight: bold;
+}
+
+.comment-date{
+	font-weight: normal;
+}
