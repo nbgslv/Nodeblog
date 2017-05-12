@@ -57,7 +57,7 @@ router.post('/add', upload.single('mainimage'), function(req, res, next) {
   			if(err){
   				res.send(err);
   			} else {
-  				res.flash('success', 'Post added');
+  				req.flash('success', 'Post added');
   				res.location('/');
   				res.redirect('/');
   			}

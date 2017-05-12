@@ -14,6 +14,8 @@ html
             a(href='/posts/add') Add Post
           li
             a(href='/categories/add') Add Category
+      div(class='default default-success')
+        != messages()
       block content
       footer
         p NodeBlog &copy; 2017 nbgslv
